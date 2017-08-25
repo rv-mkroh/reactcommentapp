@@ -1,9 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Commentbox(props) {
+function CommentBox(props) {
   return(
-    <p>{props.comment} <span>x</span></p>
+    <p>{props.comment} <button onClick={props.removeComment} value={props.value} >X</button></p>
   );
 }
 
-export default Commentbox;
+CommentBox.propTypes = {
+  key: PropTypes.number,
+  removeComment: PropTypes.func,
+  comment: PropTypes.string,
+};
+
+
+export default CommentBox;
